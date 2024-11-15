@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Read
+{% endblock %}
+
+{% block main %} 
+    <div style="display: flex; align-items: center; justify-content: center; height: 90vh;">
+        <div class="container">
+            <div class="card">
+                <h5 class="card-header "><center>__PROFILE__</center></h5>
+                <div class="card-body">
+                    
+                    <p class="card-text">Name: {{todo.title}}</p>
+                    <p class="card-text">Composition: {{todo.description}}</p>
+                    <p class="card-title">Date Created: {{todo.date_added}}....</p>
+                    <p class="card-title">Age: {{todo.achieved}}</p>
+
+                    <a href="{% url 'home'%}" class="btn btn-outline-primary"> <i class="ri-arrow-left-line mx-1"></i> Back</a>
+                    <a href="{% url 'delete' todo.id %}" class="btn btn-outline-danger"> <i class="ri-delete-bin-6-line" style="position: absolute; top: 2; right: 4; color: rgb(248, 54, 54); font-size: 1.5em;"></i></i> Delete</a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

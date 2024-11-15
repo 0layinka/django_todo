@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Update Person
+{% endblock %}
+
+{% block main %}
+<div class="container my-4">
+    <a href="{% url 'home' %}" class="btn btn-outline-primary">
+        <i class="ri-arrow-left-line mx-1"></i> Back
+    </a>
+</div>
+
+<form autocomplete="off" class="container border rounded-3 shadow" method="POST">
+    {% csrf_token %}
+    
+    <div class="my-3">
+        <label class="form-label" for="id_name">Enter Your Title:</label>
+        <input type="text" id="id_name" name="title" required class="form-control" value="{{ todo.title }}">
+    </div>
+    
+    
+    <div class="my-3">
+        <div class="form-floating">
+            <textarea class="form-control" required placeholder="Leave a comment here" id="id_mini_composition" name="description" style="height: 100px">{{ todo.description }}</textarea>
+            <label for="id_mini_composition">Description</label>
+        </div>
+    </div>
+    
+    <div class="d-grid gap-2 my-3">
+        <button class="btn btn-primary rounded-sm" type="submit">Update</button>
+    </div>
+</form>
+
+
+
+
+
+{% endblock %}

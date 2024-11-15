@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    create
+{% endblock %}
+
+{% block main %}
+<div class="container my-4">
+    <a href="{% url 'home' %}" class="btn btn-outline-primary">
+        <i class="ri-arrow-left-line mx-1"></i> Back
+    </a>
+</div>
+
+<form autocomplete="off" class="container border rounded-3 shadow" method="POST">
+    {% csrf_token %}
+    <div class="my-3">
+        <label class="form-label" for="id_name">Enter Your Title:</label>
+        <input type="text" id="id_name" name="title" class="form-control">
+    </div>
+    
+    
+    <div class="my-3">
+        <div class="form-floating">
+            <textarea class="form-control" placeholder="Leave a comment here" id="id_mini_composition" name="description" style="height: 100px"></textarea>
+            <label for="id_mini_composition">Description</label>
+        </div>
+    </div>
+    
+    <div class="d-grid gap-2 my-3">
+        <button class="btn btn-primary rounded-sm" type="submit">Submit</button>
+    </div>
+</form>
+
+
+
+{% endblock %}
+
+
+
+<!-- <div class="container my-4">
+    <a href="{% url 'home' %}" class="btn btn-outline-primary">
+        <i class="ri-arrow-left-line mx-1"></i> Back
+    </a>
+</div>
+
+<form autocomplete="off" class="container border rounded-3 shadow" method="POST">
+    {% csrf_token %}
+    <div class="my-3">
+        <label class="form-label" for="id_name">Enter Your Name:</label>
+        <input type="text" id="id_name" name="name" class="form-control">
+    </div>
+    
+    <div class="my-3">
+        <label class="form-label" for="id_age">Enter your age:</label>
+        <input type="number" id="id_age" name="age" class="form-control">
+    </div>
+    
+    <div class="my-3">
+        <div class="form-floating">
+            <textarea class="form-control" placeholder="Leave a comment here" id="id_mini_composition" name="mini_composition" style="height: 100px"></textarea>
+            <label for="id_mini_composition">Description</label>
+        </div>
+    </div>
+    
+    <div class="d-grid gap-2 my-3">
+        <button class="btn btn-primary rounded-sm" type="submit">Submit</button>
+    </div>
+</form> -->
+
+
+

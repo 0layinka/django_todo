@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    homepage
+{% endblock %}
+
+{% block main %}
+
+    <div class="container" style="padding-left: 40px;">
+        <a href="{% url 'create'%} " class="btn btn-outline-primary my-3"> <i class="ri-arrow-up-line"></i>Upload</a>
+    </div>    
+    <div class="container row mx-auto ">
+        {% for x in todo%}
+        <div class="col-sm-6 my-3">
+            <div class="card rounded-sm shadow">
+              <div class="card-body" style="position: relative;">
+                <a href="{% url 'delete' x.id %}"><i class="ri-delete-bin-6-line" style="position: absolute; top: 2; right: 4; color: rgb(248, 54, 54); font-size: 1.5em;"></i></a>
+                  <h5 class="card-title">{{x.title|upper}}</h5>
+                  <p class="card-title my-2">Date: {{x.date_added}}</p>
+                <p class="card-text">{{ x.description|truncatechars:10 }}</p>
+                <a href="{% url 'read' x.id %}" class="btn btn-outline-primary">See More <i class="ri-arrow-right-line"></i></a>
+                <a href="{% url 'update' x.id %}" class="btn btn-outline-primary px-3 mx-2">Edit</a>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+    </div>
+  
+{% endblock %}
